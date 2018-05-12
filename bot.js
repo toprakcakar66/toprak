@@ -18,24 +18,6 @@ bot.on("message", message => {
         message.reply("**Aleyküm Selam!**")
     }
     
-      if (message.channel.type !== 'dm') {
-         (message.content.toLowerCase() === "özel yaz") {
-          const ozelmesajkontrol = new Discord.RichEmbed()
-          
-    .setColor(0x00AE86)
-    .setTimestamp()
-    .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Özel mesajlarını kontrol et. :postbox:');
-    message.channel.sendEmbed(ozelmesajkontrol) }
-	const pingozel = new Discord.RichEmbed()
-    .setColor(0x00AE86)
-    .setTimestamp()
-    .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Link: https://discordapp.com/oauth2/authorize?client_id=288310817810546699&scope=bot&permissions=401812495');
-    return message.author.sendEmbed(pingozel)
-    }
-
-    
     if (message.content.toLowerCase() === prefix + "sunucufoto") {
         message.reply(messsage.guild.iconURL)
     }
