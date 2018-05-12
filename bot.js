@@ -70,7 +70,7 @@ bot.on("message", message => {
     if (message.content === prefix + "kanaltarih") {
         const embed = new Discord.RichEmbed()
 
-            .addField("Avatarın", message.author.avatarURL, true)
+            .addField("Avatarın", message.channel.createdAt, true)
 
         return message.channel.sendEmbed(embed)
     }
@@ -78,7 +78,7 @@ bot.on("message", message => {
     if (message.content === prefix + "avatarım") {
         const embed = new Discord.RichEmbed()
 
-            .addField("Yazdığın kanalın oluşturlma tarihi", message.channel.createdAt, true)
+            .addField("Yazdığın kanalın oluşturlma tarihi", message.author.avatarURL, true)
 
         return message.channel.sendEmbed(embed)
     }
