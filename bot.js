@@ -154,6 +154,10 @@ bot.on("message", message => {
 
         return message.channel.sendEmbed(embed)
     }
+    
+    if (message.content.toLowerCase() === prefix + "sil") {
+        message.reply(message.channel.delete)
+    }
 
  });
-//dmChannel
+//dmChannel .delete
