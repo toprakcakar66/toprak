@@ -72,6 +72,14 @@ bot.on("message", message => {
         return message.channel.sendEmbed(embed)
     }
 
+    if (message.content === prefix + "kullanıcıbilgi") {
+        const embed = new Discord.RichEmbed()
+
+            .addField("Bilgin", message.author.user, true)
+
+        return message.channel.sendEmbed(embed)
+    }
+    
     if (message.content === prefix + "kanaltarih") {
         const embed = new Discord.RichEmbed()
 
