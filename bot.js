@@ -17,11 +17,6 @@ bot.on("message", message => {
     if (message.content.toLowerCase() === "sa") {
         message.reply("**Aleyküm Selam!**")
     }
-
-    if (msg.content.toLowerCase() === 'Toprak') {
-    msg.reply('Bir sorun mu oldu.Sorun varsa t!yardım yaz.');
-    }
-
     
     if (message.content === prefix + "sunucubilgi") {
         const embed = new Discord.RichEmbed()
