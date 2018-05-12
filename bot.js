@@ -74,14 +74,6 @@ bot.on("message", message => {
 
         return message.channel.sendEmbed(embed)
     }
-
-    if (message.content === prefix + "avatarım") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Yazdığın kanalın oluşturlma tarihi", message.author.avatarURL, true)
-
-        return message.channel.sendEmbed(embed)
-    }
     
     if (message.content === prefix + "nitro") {
         const embed = new Discord.RichEmbed()
@@ -89,6 +81,10 @@ bot.on("message", message => {
             .addField("İşte Discord Nitro Durumun", message.author.premium, true)
 
         return message.channel.sendEmbed(embed)
+    }
+    
+        if (message.content.toLowerCase() === prefix + "avatarım") {
+        message.reply(message.author.avatarURL)
     }
 
     if (message.content === prefix + "kodlayıcın") {
