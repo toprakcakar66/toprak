@@ -19,7 +19,7 @@ bot.on("message", message => {
     }
     
     if (message.content.toLowerCase() === prefix + "ping") {
-        message.reply("Pingim **' + client.ping + '**ms")
+        message.reply("Pingim! **' + client.ping + '** ms")
     }
     
     if (message.content.toLowerCase() === "Toprak") {
