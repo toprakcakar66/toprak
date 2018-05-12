@@ -112,6 +112,7 @@ bot.on("message", message => {
             .addField(prefix + "tag", "İsminizi atar.(Username#0000)")
             .addField(prefix + "kodlayıcın", "Botun kodlayıcısını atar.")
             .addField(prefix + "avatarım", "Avatarının fotosunu atar.")
+            .addField(prefix + "büyükmü", "250 den daha fazla kişi varsa true der yoksa false der")
             .addField("Küfürleri engeller", "En çok kullanılan küfürler.(Düzeltilmesi Gerek)")
 
         return message.channel.sendEmbed(embed)
