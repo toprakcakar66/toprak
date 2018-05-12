@@ -18,6 +18,10 @@ bot.on("message", message => {
         message.reply("**Aleyküm Selam!**")
     }
     
+        if (message.content.toLowerCase() === prefix + "sunucufoto") {
+        message.reply(messsage.guild.iconURL)
+    }
+    
     if (message.content === prefix + "sunucubilgi") {
         const embed = new Discord.RichEmbed()
 
