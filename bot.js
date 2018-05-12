@@ -131,13 +131,3 @@ bot.on("message", message => {
     }
 
  });
-
-bot.on("message", message => {
-
-    const kufur = ["amk", "aq", "sik", "pez", "oç", "orospu", "am"];
-    if (kufur.some(word => message.content.includes(word)) ) {
-        message.reply("**Küfür Etme!** :rage:")
-        message.delete()
-    }
-
-});
