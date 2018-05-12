@@ -34,6 +34,8 @@ bot.on("message", message => {
             .addField("Toplam Üye Sayısı", message.guild.memberCount, true)
 
             .addField("AFK Süresi", message.guild.afkTimeout, true)
+        
+            .addField("AFK Kanalının IDsi", message.guild.afkChannelID, true)
 
             .setFooter("Oluşturulma Tarihi " + message.guild.createdAt)
 
