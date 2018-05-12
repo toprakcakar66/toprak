@@ -22,7 +22,11 @@ bot.on("message", message => {
         message.reply("**Bir sorun mu oldu.Sorun varsa t!yardım yaz.")
     }
 
+    if (msg.content === 'Toprak') {
+    msg.reply('pong');
+    }
 
+    
     if (message.content === prefix + "sunucubilgi") {
         const embed = new Discord.RichEmbed()
 
@@ -98,6 +102,7 @@ bot.on("message", message => {
     if (message.content === prefix + "yardım") {
         const embed = new Discord.RichEmbed()
 
+            .addField("Selam ben Toprak", "BUDA KOMUTLARIM")        
             .addField(prefix + "id", "İDni atar.")
             .addField(prefix + "hesaptarih", "Hesabının oluşturma tarihini atar.")
             .addField(prefix + "kanaltarih", "Yazdığın kanalın oluşturma tarihi.")
