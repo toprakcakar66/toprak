@@ -18,10 +18,6 @@ bot.on("message", message => {
         message.reply("**Aleyküm Selam!**")
     }
     
-    if (message.content.toLowerCase() === prefix + "ping") {
-        message.reply("Pingim! **' + client.ping + '** ms")
-    }
-    
     if (message.content.toLowerCase() === "Toprak") {
         message.reply("**Bir sorun mu oldu.Sorun varsa t!yardım yaz.")
     }
@@ -110,7 +106,6 @@ bot.on("message", message => {
             .addField(prefix + "tag", "İsminizi atar.(Username#0000)")
             .addField(prefix + "kodlayıcın", "Botun kodlayıcısını atar.")
             .addField(prefix + "avatarım", "Avatarının fotosunu atar.")
-            .addField(prefix + "ping", "Botun pingini atar.")
             .addField("Küfürleri engeller", "En çok kullanılan küfürler.(Düzeltilmesi Gerek)")
 
         return message.channel.sendEmbed(embed)
