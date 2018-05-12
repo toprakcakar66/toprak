@@ -126,6 +126,14 @@ bot.on("message", message => {
 
         return message.channel.sendEmbed(embed)
     }
+    
+        if (message.content === prefix + "dm") {
+        const embed = new Discord.RichEmbed()
+
+            .addField("Bot DM", message.author.dmChannel, true)
+
+        return message.channel.sendEmbed(embed)
+    }
 
     if (message.content === prefix + "bilgi") {
         const embed = new Discord.RichEmbed()
@@ -148,3 +156,4 @@ bot.on("message", message => {
     }
 
  });
+//dmChannel
