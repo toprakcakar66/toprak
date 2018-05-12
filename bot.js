@@ -18,8 +18,12 @@ bot.on("message", message => {
         message.reply("**Aleyküm Selam!**")
     }
     
-        if (message.content.toLowerCase() === prefix + "sunucufoto") {
+    if (message.content.toLowerCase() === prefix + "sunucufoto") {
         message.reply(messsage.guild.iconURL)
+    }
+    
+     if (message.content.toLowerCase() === prefix + "büyükmü") {
+        message.reply(message.guild.large)
     }
     
     if (message.content === prefix + "sunucubilgi") {
