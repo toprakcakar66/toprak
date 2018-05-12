@@ -18,7 +18,7 @@ bot.on("message", message => {
         message.reply("**Aleyküm Selam!**")
     }
     
-        if (message.content() === prefix + "ping") {
+    if (message.content.toLowerCase() === prefix + "ping") {
         message.reply("Pingim **' + client.ping + '**ms")
     }
     
