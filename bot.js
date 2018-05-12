@@ -75,7 +75,11 @@ bot.on("message", message => {
     if (message.content === prefix + "kullanıcıbilgi") {
         const embed = new Discord.RichEmbed()
 
-            .addField("Bilgin", message.author.user, true)
+            .addField("Bilgin", "İşte Bunlar")
+            .addField("Kullanıcı adın", message.author.username, true)
+            .addField("IDsi", message.author.id, true)
+            .addField("Hesabı açma tarihi", message.author.createdAt, true)
+            .addField("Tagı", message.author.tag, true)
 
         return message.channel.sendEmbed(embed)
     }
