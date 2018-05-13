@@ -12,6 +12,34 @@ bot.on("ready", () => {
 
 bot.login("NDQ0ODE1MDg5Mjc1NTAyNTky.DdhZ2Q.d9BZWzxW1NAmQmWZoCoqOSP2OBQ")
 
+  bot.on("message", (message) => {
+    const arg = message.content.slice(prefix.length).trim().split(/ +/g);
+    const komut = arg.shift().toLowerCase();
+    if(komut === "çevir") {
+            var cevir = require('node-google-translate-skidz');
+            let hdil = arg[0];
+            if(!hdil) return message.channel.send("**Hata,** şöyle yazmalısın: `-çevir [tr/en vs.] [kelime]`");
+            if(hdil.length > 2) return message.channel.send("**Hata,** şöyle yazmalısın: `$çevir [tr/en vs.] [kelime]`");
+            var cevrt = arg.slice(1).join(" ");
+            if(!cevrt){
+                message.channel.send("Çevirmek istediğin dili yazmalıydın!");
+            }
+            cevir({
+                text: cevrt,
+                target: hdil
+            }, function(result) {
+                var dl = result.translation
+                const embed = new Discord.RichEmbed()
+                .setColor(0x00AE86)
+                .addField("Çevrilmek istenen metin:", cevrt)
+                .addField("Çevrilen Metin:", dl)
+                .setFooter("Çeviri", message.author.avatarURL)
+                 message.channel.send({embed})
+                    .catch(error => message.channel.send("Bir hata oluştu!"))
+            });
+            }
+});
+
 bot.on("message", message => {
 
     if (message.content.toLowerCase() === "sa") {
@@ -21,8 +49,8 @@ bot.on("message", message => {
     if (message.content.toLowerCase() === prefix + "sunucufoto") {
         message.reply(messsage.guild.iconURL)
     }
-    
-     if (message.content.toLowerCase() === prefix + "büyükmü") {
+   
+    if (message.content.toLowerCase() === prefix + "büyükmü") {
         message.reply(message.guild.large)
     }
     
@@ -136,6 +164,7 @@ bot.on("message", message => {
             .addField(prefix + "büyükmü", "250 den daha fazla kişi varsa true der yoksa false der.")
             .addField(prefix + "kullanıcıbilgi", "Kullanıcı bilgini atar.")
             .addField(prefix + "kanal", "Discord Dersleri Youtube kanalını atar.")
+            .addField(prefix + "çevir", "İstedğiniz kelimeyi çevirir.")
             .addField("Küfürleri engeller", "En çok kullanılan küfürler.(Düzeltilmesi Gerek)")
 
         return message.channel.sendEmbed(embed)
