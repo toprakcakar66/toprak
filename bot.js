@@ -21,7 +21,7 @@ bot.on("message", message => {
     if (message.content.toLowerCase() === prefix + "sunucufoto") {
         message.reply(messsage.guild.iconURL)
     }
-   
+    
     if (message.content.toLowerCase() === prefix + "büyükmü") {
         message.reply(message.guild.large)
     }
