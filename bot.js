@@ -47,6 +47,7 @@ bot.on("message", message => {
 
         return message.channel.sendEmbed(embed)
     }
+    
 
     if (message.content === prefix + "id") {
         const embed = new Discord.RichEmbed()
@@ -56,6 +57,14 @@ bot.on("message", message => {
         return message.channel.sendEmbed(embed)
     }
 
+    if (message.content === prefix + "kanal") {
+        const embed = new Discord.RichEmbed()
+
+            .addField("Discord Dersleri Youtube", "https://www.youtube.com/channel/UCLdwB6rK0A5MiVa-SF8eRMg")
+
+        return message.channel.sendEmbed(embed)
+    }
+    
     if (message.content === prefix + "hesaptarih") {
         const embed = new Discord.RichEmbed()
 
@@ -126,6 +135,7 @@ bot.on("message", message => {
             .addField(prefix + "avatarım", "Avatarının fotosunu atar.")
             .addField(prefix + "büyükmü", "250 den daha fazla kişi varsa true der yoksa false der.")
             .addField(prefix + "kullanıcıbilgi", "Kullanıcı bilgini atar.")
+            .addField(prefix + "kanal", "Discord Dersleri Youtube kanalını atar.")
             .addField("Küfürleri engeller", "En çok kullanılan küfürler.(Düzeltilmesi Gerek)")
 
         return message.channel.sendEmbed(embed)
