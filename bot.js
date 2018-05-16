@@ -18,6 +18,10 @@ bot.on("message", message => {
         message.reply("**Aleyküm Selam!**")
     }
     
+    if (message.content.toLowerCase() === "ping") {
+        message.reply("**Aleyküm Selam!**")
+    }
+    
     if (message.content.toLowerCase() === prefix + "sunucufoto") {
         message.reply(messsage.guild.iconURL)
     }
@@ -136,6 +140,7 @@ bot.on("message", message => {
             .addField(prefix + "büyükmü", "250 den daha fazla kişi varsa true der yoksa false der.")
             .addField(prefix + "kullanıcıbilgi", "Kullanıcı bilgini atar.")
             .addField(prefix + "kanal", "Discord Dersleri Youtube kanalını atar.")
+            .addField(prefix + "ping", "Botun pingini gösterir."
             .addField("Küfürleri engeller", "En çok kullanılan küfürler.(Düzeltilmesi Gerek)")
 
         return message.channel.sendEmbed(embed)
