@@ -57,11 +57,19 @@ bot.on("message", message => {
     }
 
     if (message.content === prefix + "kanal") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Discord Dersleri Youtube", "https://www.youtube.com/channel/UCLdwB6rK0A5MiVa-SF8eRMg")
-
-        return message.channel.sendEmbed(embed)
+  if (message.channel.type !== 'dm') {
+    const ozelmesajkontrol = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('Özel mesajlarını kontrol et. :postbox:');
+    message.channel.sendEmbed(ozelmesajkontrol) }
+	const pingozel = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('Link: https://www.youtube.com/channel/UCLdwB6rK0A5MiVa-SF8eRMg');
+    return message.author.sendEmbed(pingozel)
     }
     
     if (message.content === prefix + "hesaptarih") {
