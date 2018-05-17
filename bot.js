@@ -18,10 +18,6 @@ bot.on("message", message => {
         message.reply("**Aleyküm Selam!**")
     }
 	
-    if (message.content === prefix + "ping") {
-        message.reply("Pingim **"+ client.ping "**ms")
-    }
-	
     if (message.content.toLowerCase() === prefix + "sunucufoto") {
         message.reply(messsage.guild.iconURL)
     }
