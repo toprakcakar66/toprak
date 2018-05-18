@@ -75,7 +75,7 @@ bot.on("message", message => {
 
 bot.on("message", message => {
 
-    const kufur = ["amk", "aq", "sik", "oç", "orospu", "göt"];
+    const kufur = ["amk", "aq", "sik", "orospu", "göt"];
     if (kufur.some(word => message.content.includes(word)) ) {
         message.reply("**Küfür Etme!** :rage:")
         message.delete()
