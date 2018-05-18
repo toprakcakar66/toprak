@@ -2,30 +2,30 @@ const { stripIndents, oneLine } = require('common-tags');
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
-let prefix = "t!";
+let prefix = "d!";
 let owner = "427061793123205131"; // Buraya kendi IDnizi yazın.
 
 bot.on("ready", () => {
-    bot.user.setGame(prefix + "yardım | ")
-    console.log("Bağlandım!")
+    bot.user.setGame(prefix + "yardım | ") 
+    console.log("Bağlandı")   
 });
 
-bot.login("NDQ0ODE1MDg5Mjc1NTAyNTky.DdhZ2Q.d9BZWzxW1NAmQmWZoCoqOSP2OBQ")
+bot.login("NDQ2OTY1MTAwNDk1MjQxMjM2.DeAsVg.__NgPxxV1gwYVvM0ASWFeE_jkhg")
 
 bot.on("message", message => {
 
     if (message.content.toLowerCase() === "sa") {
-        message.reply("**Aleyküm Selam!**")
+        message.channel.sendMessage("**Aleyküm Selam!**")
     }
-	
-    if (message.content.toLowerCase() === prefix + "sunucufoto") {
-        message.reply(messsage.guild.iconURL)
+
+    if (message.content.toLowerCase() === "dragon") {
+      message.reply("**Bana seslendiysen ve bir sorun varsa d!yardım yaz.**")
     }
-    
-    if (message.content.toLowerCase() === prefix + "büyükmü") {
-        message.reply(message.guild.large)
+
+    if (message.content.toLowerCase() === prefix + "ortakol") {
+      message.channel.sendMessage("Botu sende Toprak T ile kodlamak istiyorsan toprakcakar5555@gmail.com dan bize ulaş.\n Gerekli şartları söylüyeceyiz.")
     }
-    
+
     if (message.content === prefix + "sunucubilgi") {
         const embed = new Discord.RichEmbed()
 
@@ -38,8 +38,6 @@ bot.on("message", message => {
             .addField("Toplam Üye Sayısı", message.guild.memberCount, true)
 
             .addField("AFK Süresi", message.guild.afkTimeout, true)
-        
-            .addField("AFK Kanalının IDsi", message.guild.afkChannelID, true)
 
             .setFooter("Oluşturulma Tarihi " + message.guild.createdAt)
 
@@ -47,148 +45,40 @@ bot.on("message", message => {
 
         return message.channel.sendEmbed(embed)
     }
-    
-
-    if (message.content === prefix + "id") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("İDin", message.author.id, true)
-
-        return message.channel.sendEmbed(embed)
-    }
-
-    if (message.content === prefix + "kanal") {
-  if (message.channel.type !== 'dm') {
-    const ozelmesajkontrol = new Discord.RichEmbed()
-    .setColor(0x00AE86)
-    .setTimestamp()
-    .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Özel mesajlarını kontrol et. :postbox:');
-    message.channel.sendEmbed(ozelmesajkontrol) }
-	const pingozel = new Discord.RichEmbed()
-    .setColor(0x00AE86)
-    .setTimestamp()
-    .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Link: https://www.youtube.com/channel/UCLdwB6rK0A5MiVa-SF8eRMg');
-    return message.author.sendEmbed(pingozel)
-    }
-    
-    if (message.content === prefix + "hesaptarih") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Hesabını oluşturma tarihin", message.author.createdAt, true)
-
-        return message.channel.sendEmbed(embed)
-    }
-
-    if (message.content === prefix + "kanalid") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Yazdığın kanalın idsi", message.channel.id, true)
-
-        return message.channel.sendEmbed(embed)
-    }
-
-    if (message.content === prefix + "kullanıcıbilgi") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Bilgin", "İşte Bunlar")
-            .addField("Kullanıcı adın", message.author.username, true)
-            .addField("IDsi", message.author.id, true)
-            .addField("Hesabı açma tarihi", message.author.createdAt, true)
-            .addField("Tagı", message.author.tag, true)
-
-        return message.channel.sendEmbed(embed)
-    }
-    
-    if (message.content === prefix + "kanaltarih") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Avatarın", message.channel.createdAt, true)
-
-        return message.channel.sendEmbed(embed)
-    }
-    
-    if (message.content === prefix + "nitro") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("İşte Discord Nitro Durumun", message.author.premium, true)
-
-        return message.channel.sendEmbed(embed)
-    }
-    
-        if (message.content.toLowerCase() === prefix + "avatarım") {
-        message.reply(message.author.avatarURL)
-    }
-
-    if (message.content === prefix + "kodlayıcın") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Bot kodlayıcısı", `<@${owner}>`, true)
-
-        return message.channel.sendEmbed(embed)
-    }
 
     if (message.content === prefix + "yardım") {
-        const embed = new Discord.RichEmbed()
+      const embed = new Discord.RichEmbed()
 
-            .addField("Selam ben Toprak", "BUDA KOMUTLARIM")        
-            .addField(prefix + "id", "İDni atar.")
-            .addField(prefix + "hesaptarih", "Hesabının oluşturma tarihini atar.")
-            .addField(prefix + "kanaltarih", "Yazdığın kanalın oluşturma tarihi.")
-            .addField(prefix + "sunucubilgi", "Sunucu hakkında bilgi verir.")
-            .addField(prefix + "kanalid", "Yazdığınız kanalın idsini atar.")
-            .addField(prefix + "tag", "İsminizi atar.(Username#0000)")
-            .addField(prefix + "kodlayıcın", "Botun kodlayıcısını atar.")
-            .addField(prefix + "avatarım", "Avatarının fotosunu atar.")
-            .addField(prefix + "büyükmü", "250 den daha fazla kişi varsa true der yoksa false der.")
-            .addField(prefix + "kullanıcıbilgi", "Kullanıcı bilgini atar.")
-            .addField(prefix + "kanal", "Discord Dersleri Youtube kanalını atar.")
-            .addField("Küfürleri engeller", "En çok kullanılan küfürler.(Düzeltilmesi Gerek)")
+          .addField(prefix + "sunucubilgi", "Sunucu hakkında bilgi verir.")
 
-        return message.channel.sendEmbed(embed)
+          .addField(prefix + "yapımcın", "Bot yapımcısını atar.")
+
+          .addField(prefix + "ortakol", "Botu Toprak Toprak T ile kodlarsınız.")
+          
+          .addField("Küfür Engelleyici", "Şimdilik sadece bilindik küfürler")
+      return message.channel.sendEmbed(embed)
+  }
+
+  if (message.content === prefix + "yapımcın") {
+    const embed = new Discord.RichEmbed()
+
+        .addField("Yapımcım", `<@${owner}>`, true)
+
+    return message.channel.sendEmbed(embed)
+}
+  
+    if (message.content === prefix + "kurabiye") {
+        message.channel.sendMessage(`Canım gel buraya sana kurabiye vereceğim! <@${message.author.id}>`)
+        message.react("🍪")
+    }
+});
+
+bot.on("message", message => {
+
+    const kufur = ["amk", "aq", "sik", "oç", "orospu", "göt"];
+    if (kufur.some(word => message.content.includes(word)) ) {
+        message.reply("**Küfür Etme!** :rage:")
+        message.delete()
     }
 
-
-    if (message.content === prefix + "tag") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Tagın", message.author.tag, true)
-
-        return message.channel.sendEmbed(embed)
-    }
-    
-        if (message.content === prefix + "dm") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Bot DM", message.author.dmChannel, true)
-
-        return message.channel.sendEmbed(embed)
-    }
-
-    if (message.content === prefix + "bilgi") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Bot Sahibi", `<@${owner}>`, true)
-
-            .addField("Version", "0.0.2", true)
-
-            .addField("Toplam Sunucu Sayısı", bot.guilds.size, true)
-
-            .addField("Toplam Kullanıcı Sayısı", bot.users.size, true)
-
-            .addField("Toplam Kanal Sayısı", bot.channels.size, true)
-
-            .addField("Kitaplık Türü", "discord.js")
-
-            .setColor(0x000001)
-
-        return message.channel.sendEmbed(embed)
-    }
-    
-    if (message.content.toLowerCase() === prefix + "sil") {
-        message.reply(message.channel.delete)
-    }
-
- });
-//dmChannel .delete
+});
