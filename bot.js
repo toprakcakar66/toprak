@@ -1,4 +1,4 @@
-const { stripIndents, oneLine } = require('common-tags');
+const { stripIndents, oneLine } = require('common-tags'); etkinleştireceksen bu kısmı sil
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
