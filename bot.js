@@ -31,7 +31,7 @@ client.on('message', msg => {
     msg.channel.sendMessage("100 adet mesaj silindi!");
   }
   if (msg.content.toLowerCase() === prefix + 'reboot') {
-    if (msg.author.id !== ayarlar.sahip) {
+    if (msg.author.id !== "406832593758322688") {
       msg.reply('Benim yapımcım değilsin!');
     } else {
       msg.channel.sendMessage(`Bot yeniden başlatılıyor...`).then(msg => {
