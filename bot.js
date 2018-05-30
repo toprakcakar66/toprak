@@ -1,84 +1,45 @@
-const { stripIndents, oneLine } = require('common-tags'); etkinleştireceksen bu kısmı sil
-const Discord = require("discord.js");
-const bot = new Discord.Client();
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
-let prefix = "d!";
-let owner = "427061793123205131"; // Buraya kendi IDnizi yazın.
+var prefix = "d!";
+var sahip = "406832593758322688";
 
-bot.on("ready", () => {
-    bot.user.setGame(prefix + "yardım | ") 
-    console.log("Bağlandı")   
+client.on('ready', () => {
+  console.log(`BOT: ${client.user.username} adı ile giriş yaptı!`);
 });
 
-bot.login("NDQ2OTY1MTAwNDk1MjQxMjM2.DeAsVg.__NgPxxV1gwYVvM0ASWFeE_jkhg")
+client.on('message', msg => {
+  console.log(`LOG: S: ${msg.guild.name} M: ${msg.content} Y: ${msg.author.tag}`);
+  if (msg.author.id === ayarlar.id) return;
+  if (msg.author.bot) return;
 
-bot.on("message", message => {
-
-    if (message.content.toLowerCase() === "sa") {
-        message.channel.sendMessage("**Aleyküm Selam!**")
-    }
-
-    if (message.content.toLowerCase() === "dragon") {
-      message.reply("**Bana seslendiysen ve bir sorun varsa d!yardım yaz.**")
-    }
-
-    if (message.content.toLowerCase() === prefix + "ortakol") {
-      message.channel.sendMessage("Botu sende Toprak T ile kodlamak istiyorsan toprakcakar5555@gmail.com dan bize ulaş.\n Gerekli şartları söylüyeceyiz.")
-    }
-
-    if (message.content === prefix + "sunucubilgi") {
-        const embed = new Discord.RichEmbed()
-
-            .addField("Sunucu Adı", message.guild.name, true)
-
-            .addField("Sunucu ID", message.guild.id, true)
-
-            .addField("Sunucu Sahibi", message.guild.owner, true)
-
-            .addField("Toplam Üye Sayısı", message.guild.memberCount, true)
-
-            .addField("AFK Süresi", message.guild.afkTimeout, true)
-
-            .setFooter("Oluşturulma Tarihi " + message.guild.createdAt)
-
-            .setColor(0xff0000)
-
-        return message.channel.sendEmbed(embed)
-    }
-
-    if (message.content === prefix + "yardım") {
-      const embed = new Discord.RichEmbed()
-
-          .addField(prefix + "sunucubilgi", "Sunucu hakkında bilgi verir.")
-
-          .addField(prefix + "yapımcın", "Bot yapımcısını atar.")
-
-          .addField(prefix + "ortakol", "Botu Toprak Toprak T ile kodlarsınız.")
-          
-          .addField("Küfür Engelleyici", "Şimdilik sadece bilindik küfürler")
-      return message.channel.sendEmbed(embed)
+  if (!msg.content.startsWith(prefix)) {
+	  return;
   }
-
-  if (message.content === prefix + "yapımcın") {
-    const embed = new Discord.RichEmbed()
-
-        .addField("Yapımcım", `<@${owner}>`, true)
-
-    return message.channel.sendEmbed(embed)
-}
-  
-    if (message.content === prefix + "kurabiye") {
-        message.channel.sendMessage(`Canım gel buraya sana kurabiye vereceğim! <@${message.author.id}>`)
-        message.react("🍪")
-    }
+  if (msg.content.toLowerCase() === prefix + 'ping') {
+    msg.reply('Pong! **' + client.ping + '** ms');
+  }
+  if (msg.content.toLowerCase() === prefix + 'sa') {
+    msg.reply('Aleyküm selam!');
+  }
+  if (msg.content.toLowerCase() === prefix + 'yaz') {
+    msg.delete();
+    msg.channel.sendMessage(msg.content);
+  }
+  if (msg.content.toLowerCase() === prefix + 'temizle') {
+    msg.channel.bulkDelete(100);
+    msg.channel.sendMessage("100 adet mesaj silindi!");
+  }
+  if (msg.content.toLowerCase() === prefix + 'reboot') {
+    if (msg.author.id !== ayarlar.sahip) {
+      msg.reply('Benim yapımcım değilsin!');
+    } else {
+      msg.channel.sendMessage(`Bot yeniden başlatılıyor...`).then(msg => {
+      console.log(`BOT: Bot yeniden başlatılıyor...`);
+      process.exit(0);
+    })
+   }
+  }
 });
 
-bot.on("message", message => {
-
-    const kufur = ["amk", "aq", "sik", "orospu", "göt"];
-    if (kufur.some(word => message.content.includes(word)) ) {
-        message.reply("**Küfür Etme!** :rage:")
-        message.delete()
-    }
-
-});
+client.login("NDQyMDQ2NTIwOTQyOTE5Njgx.DfAv5w.bXRDdgQ2-1llw7JJxduT-6UduKI");
