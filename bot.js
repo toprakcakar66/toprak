@@ -34,10 +34,27 @@ client.on('message', msg => {
    }
 });
 
+client.on('guildMemberAdd', member => {
+  let guild = member.guild;
+  let joinRole = guild.roles.find('name', 'Rhudaur TV Ailesi'); // Burada girişte verilcek rolu seçelim.
+  member.addRole(joinRole); // seçtiğimiz rolu verelim.
+
+  const channel = member.guild.channels.find('name', 'mod-log'); // burda ise kanalı belirleyelim hangi kanala atsın ben mod-log dedim.
+  if (!channel) return;
+  const embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setAuthor(member.user.username, member.user.avatarURL)
+  .setThumbnail(member.user.avatarURL)
+  .setTitle('📥 | Sunucuya katıldı!')
+  .setTimestamp()
+  channel.sendEmbed(embed); // belirlediğimiz kanala mesaj gönderelim.
+});
+
 client.on('message', msg => {
   if (msg.content.toLocaleLowerCase() === "sa") {
     msg.reply(`**Aleyküm Selam**`)
   }
+  
   if (msg.content.toLocaleLowerCase() === prefix + "platdesteaç") {
     msg.reply(`Platin deste açmak isteğinize emin misiniz?**r!evet/r!hayır**`)
   }
