@@ -25,6 +25,8 @@ client.on('message', msg => {
    .addField(`${prefix}sonyayın`, `Rhudaur TV'in yapmış olduğu en son yayını atar atar.`)
 
    .addField(`${prefix}yayın`, `Yayın var mı yok mu onu söyler.`)
+   
+   .addField(`${prefix}platdesteaç`, `Platin deste açar`)
 
    .setColor(0xff0000)
 
@@ -36,6 +38,34 @@ client.on('message', msg => {
   if (msg.content.toLocaleLowerCase() === "sa") {
     msg.reply(`**Aleyküm Selam**`)
   }
+  if (msg.content.toLocaleLowerCase() === prefix + "platdesteaç") {
+    msg.reply(`Platin deste açmak isteğinize emin misiniz?**r!evet/r!hayır**`)
+  }
+  if (msg.content.toLocaleLowerCase() === prefix + "hayır") {
+    msg.reply(`**Komutu kullandığınız için teşekkürler**`)
+  }
+  if (msg.content.toLocaleLowerCase() === prefix + "evet") {
+  function get_random(list) {
+      return list[Math.floor((Math.random() * list.length))];
+  }
+
+  var mani1 = "https://i.imgyukle.com/2018/06/02/n0HDG.md.png"
+  var mani2 = "https://i.imgyukle.com/2018/06/02/n0OQb.md.png"
+  var mani3 = "https://i.imgyukle.com/2018/06/02/n0jgs.md.png"
+  var mani4 = "https://i.imgyukle.com/2018/06/02/n0X8Q.md.png"
+  var mani5 = "https://i.imgyukle.com/2018/06/02/n0got.md.png"
+  var mani6 = "https://i.imgyukle.com/2018/06/02/n0hLc.md.png"
+  var mani7 = ""
+
+  let mani = [mani1, mani2, mani3, mani4, mani5, mani6, mani7]
+  let sonuc = get_random(mani)
+
+  let embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("Hadi gene iyisin")
+      .setImage(sonuc)
+  return msg.channel.send(embed)
+}
   if (msg.content.toLocaleLowerCase() === prefix + "sonyayın") {
       msg.channel.sendMessage('https://www.youtube.com/watch?v=grY1H8sb36M')
   }
