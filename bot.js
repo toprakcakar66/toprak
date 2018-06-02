@@ -39,13 +39,13 @@ client.on('guildMemberAdd', member => {
   let joinRole = guild.roles.find('name', 'Rhudaur TV Ailesi'); // Burada girişte verilcek rolu seçelim.
   member.addRole(joinRole); // seçtiğimiz rolu verelim.
 
-  const channel = member.guild.channels.find('name', 'mod-log'); // burda ise kanalı belirleyelim hangi kanala atsın ben mod-log dedim.
+  const channel = member.guild.channels.find('name', 'sohbet'); // burda ise kanalı belirleyelim hangi kanala atsın ben mod-log dedim.
   if (!channel) return;
   const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setAuthor(member.user.username, member.user.avatarURL)
   .setThumbnail(member.user.avatarURL)
-  .setTitle('📥 | Sunucuya katıldı!')
+  .setTitle('Sende artık Şanslısın|HOŞGELDİN')
   .setTimestamp()
   channel.sendEmbed(embed); // belirlediğimiz kanala mesaj gönderelim.
 });
