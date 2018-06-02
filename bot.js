@@ -42,7 +42,7 @@ client.on('message', msg => {
     msg.reply(`Platin deste açmak isteğinize emin misiniz?**r!evet/r!hayır**`)
   }
   if (msg.content.toLocaleLowerCase() === prefix + "hayır") {
-    msg.reply(`**Komutu kullandığınız için teşekkürler**`)
+    msg.reply(`**Komutu kullandığınız için teşekkürler**.`)
   }
   if (msg.content.toLocaleLowerCase() === prefix + "sonyayın") {
       msg.channel.sendMessage('https://www.youtube.com/watch?v=grY1H8sb36M')
