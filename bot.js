@@ -19,14 +19,14 @@ client.on('message', msg => {
    .addField(`${prefix}davulcusözü`, `Rastegele bir davulcu sözü atar.`)
 
    .addField(`${prefix}manisöyle`, `Rastgele bir mani sözü atar.`)
+   
+   .addField(`${prefix}platdesteaç`, `Platin deste açar`)
 
    .addField(`${prefix}rastgeleyayın`, `Rhudaur TV'in videolarından birisini atar.`)
 
    .addField(`${prefix}sonyayın`, `Rhudaur TV'in yapmış olduğu en son yayını atar atar.`)
 
-   .addField(`${prefix}yayın`, `Yayın var mı yok mu onu söyler.`)
-   
-   .addField(`${prefix}platdesteaç`, `Platin deste açar`)
+   .addField(`${prefix}yayın`, `Yayın var mı yok mu onu söyler.`)alfa
 
    .setColor(0xff0000)
 
