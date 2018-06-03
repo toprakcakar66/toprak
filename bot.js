@@ -148,9 +148,21 @@ if (msg.content.toLocaleLowerCase() === prefix + "evet") {
   var mani4 = "https://i.imgyukle.com/2018/06/02/n0X8Q.md.png"
   var mani5 = "https://i.imgyukle.com/2018/06/02/n0got.md.png"
   var mani6 = "https://i.imgyukle.com/2018/06/02/n0hLc.md.png"
-  var mani7 = ""
-
-  let mani = [mani1, mani2, mani3, mani4, mani5, mani6, mani7]
+  var mani7 = "https://imgyukle.com/i/JPAPQ"
+  var mani8 = "https://imgyukle.com/i/JPdYt"
+  var mani9 = "https://imgyukle.com/i/JkkfR"
+  var mani10 = "https://imgyukle.com/i/JP0Ws"
+  var mani11 = "https://imgyukle.com/i/JkPzc"
+  var mani12 = "https://imgyukle.com/i/JkVMP"
+  var mani13 = "https://imgyukle.com/i/JkESe"
+  var mani14 = "https://imgyukle.com/i/JkRBN"
+  var mani15 = "https://imgyukle.com/i/JkJnq"
+  var mani16 = "https://imgyukle.com/i/JkQXY"
+  var mani17 = "https://imgyukle.com/i/JkrW0"
+  var mani18 = "https://imgyukle.com/i/JkCPv"
+  var mani19 = "https://imgyukle.com/i/JkSax"
+  
+  let mani = [mani1, mani2, mani3, mani4, mani5, mani6, mani7, mani8, mani9, mani10, mani11, mani12, mani13, mani14, mani15, mani16, mani17, mani18, mani19]
   let sonuc = get_random(mani)
 
   let embed = new Discord.RichEmbed()
