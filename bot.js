@@ -20,7 +20,7 @@ client.on('message', msg => {
 
    .addField(`${prefix}manisöyle`, `Rastgele bir mani sözü atar.`)
    
-   .addField(`${prefix}platdesteaç`, `Platin deste açar.`)
+   .addField(`${prefix}platdesteaç`, `Platin deste açar.**13 Adet Yeni Deste Eklendi**`)
 
    .addField(`${prefix}rastgeleyayın`, `Rhudaur TV'in videolarından birisini atar.`)
 
@@ -148,19 +148,19 @@ if (msg.content.toLocaleLowerCase() === prefix + "evet") {
   var mani4 = "https://i.imgyukle.com/2018/06/02/n0X8Q.md.png"
   var mani5 = "https://i.imgyukle.com/2018/06/02/n0got.md.png"
   var mani6 = "https://i.imgyukle.com/2018/06/02/n0hLc.md.png"
-  var mani7 = "https://imgyukle.com/i/JPAPQ"
-  var mani8 = "https://imgyukle.com/i/JPdYt"
-  var mani9 = "https://imgyukle.com/i/JkkfR"
-  var mani10 = "https://imgyukle.com/i/JP0Ws"
-  var mani11 = "https://imgyukle.com/i/JkPzc"
-  var mani12 = "https://imgyukle.com/i/JkVMP"
-  var mani13 = "https://imgyukle.com/i/JkESe"
-  var mani14 = "https://imgyukle.com/i/JkRBN"
-  var mani15 = "https://imgyukle.com/i/JkJnq"
-  var mani16 = "https://imgyukle.com/i/JkQXY"
-  var mani17 = "https://imgyukle.com/i/JkrW0"
-  var mani18 = "https://imgyukle.com/i/JkCPv"
-  var mani19 = "https://imgyukle.com/i/JkSax"
+  var mani7 = "https://i.imgyukle.com/2018/06/04/JkYMh.md.png"
+  var mani8 = "https://i.imgyukle.com/2018/06/04/JkHJn.md.png"
+  var mani9 = "https://i.imgyukle.com/2018/06/04/JkLX8.md.png"
+  var mani10 = "https://i.imgyukle.com/2018/06/04/JkNej.md.png"
+  var mani11 = "https://i.imgyukle.com/2018/06/04/Jkjko.md.png"
+  var mani12 = "https://i.imgyukle.com/2018/06/04/JkXaU.md.png"
+  var mani13 = "https://i.imgyukle.com/2018/06/04/Jkc1H.md.png"
+  var mani14 = "https://i.imgyukle.com/2018/06/04/JkgfA.md.png"
+  var mani15 = "https://i.imgyukle.com/2018/06/04/Jkiu1.md.png"
+  var mani16 = "https://i.imgyukle.com/2018/06/04/JkspI.md.png"
+  var mani17 = "https://i.imgyukle.com/2018/06/04/JkBMf.md.png"
+  var mani18 = "https://i.imgyukle.com/2018/06/04/JkDJG.md.png"
+  var mani19 = "https://i.imgyukle.com/2018/06/04/Jkmeb.md.png"
   
   let mani = [mani1, mani2, mani3, mani4, mani5, mani6, mani7, mani8, mani9, mani10, mani11, mani12, mani13, mani14, mani15, mani16, mani17, mani18, mani19]
   let sonuc = get_random(mani)
