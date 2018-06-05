@@ -62,7 +62,7 @@ client.on('message', msg => {
     msg.reply(`**Komutu kullandığınız için teşekkürler**.`)
   }
   if (msg.content.toLocaleLowerCase() === prefix + "sonyayın") {
-      msg.channel.sendMessage('https://www.youtube.com/watch?v=grY1H8sb36M')
+      msg.channel.sendMessage('https://www.youtube.com/watch?v=u18G-rl7EWM')
   }
   if (msg.content.toLocaleLowerCase() === prefix + "aboneol") {
     msg.channel.sendMessage('https://www.youtube.com/channel/UC9THRA9843yaiQygMU4mw3g')
@@ -172,7 +172,7 @@ if (msg.content.toLocaleLowerCase() === prefix + "evet") {
   return msg.channel.send(embed)
 }
  if (msg.content.toLowerCase() === prefix + "yayın") {
-   msg.reply('https://www.youtube.com/watch?v=u18G-rl7EWM')
+   msg.reply('şu anda yayın yok.Lütfen daha sonra tekrar yaz.')
  }
 });
 
