@@ -1,51 +1,27 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-var prefix = "r!";
+var prefix = "tt!";
 var owner = "427061793123205131";
 
 client.on('ready', () => {
-  client.user.setGame(`${prefix}komutlar|ABONE OL`);
+  client.user.setGame(`|ABONE OL`);
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', msg => {
-  if (msg.content === prefix + "komutlar") {
-   const embed = new Discord.RichEmbed()
-   .addField(`Selam ben ${client.user.username}`, "Buda komutlarım")
-
-   .addField(`${prefix}aboneol`, `Rhudaur TV Youtube kanalının linkini atar.`)
-
-   .addField(`${prefix}davulcusözü`, `Rastegele bir davulcu sözü atar.`)
-
-   .addField(`${prefix}manisöyle`, `Rastgele bir mani sözü atar.`)
-   
-   .addField(`${prefix}platdesteaç`, `Platin deste açar.**13 Adet Yeni Deste Eklendi**`)
-
-   .addField(`${prefix}rastgeleyayın`, `Rhudaur TV'in videolarından birisini atar.`)
-
-   .addField(`${prefix}sonyayın`, `Rhudaur TV'in yapmış olduğu en son yayını atar atar.`)
-
-   .addField(`${prefix}yayın`, `Yayın var mı yok mu onu söyler.`)
-
-   .setColor(0xff0000)
-
-   return msg.channel.send(embed)
-   }
-});
 
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
-  let joinRole = guild.roles.find('name', 'Rhudaur TV Ailesi'); // Burada girişte verilcek rolu seçelim.
+  let joinRole = guild.roles.find('name', 'TT Ailesi'); // Burada girişte verilcek rolu seçelim.
   member.addRole(joinRole); // seçtiğimiz rolu verelim.
 
-  const channel = member.guild.channels.find('name', 'sohbet'); // burda ise kanalı belirleyelim hangi kanala atsın ben mod-log dedim.
+  const channel = member.guild.channels.find('name', 'gelen-giden'); // burda ise kanalı belirleyelim hangi kanala atsın ben mod-log dedim.
   if (!channel) return;
   const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setAuthor(member.user.username, member.user.avatarURL)
   .setThumbnail(member.user.avatarURL)
-  .setTitle('Sende artık Şanslısın|HOŞGELDİN')
+  .setTitle('Sunucuya HOŞGELDİN Güzel Kardeşim')
   .setTimestamp()
   channel.sendEmbed(embed); // belirlediğimiz kanala mesaj gönderelim.
 });
@@ -208,4 +184,4 @@ client.on('guildMemberAdd', member => {
   channel.sendEmbed(embed); // belirlediğimiz kanala mesaj gönderelim.
 });
 
-client.login('NDUyMjA4MTQ3NjkyNTE5NDQ0.DfM_OA.ziA7RkO-ZXk73orZFKoqFPV-POI');
+client.login('NDY1NDgwNjI4NTYxNzcyNTQ0.DiOILg.mFuPX7A72Ue5Z_H5n_pDCBJrgpg');
