@@ -184,4 +184,4 @@ client.on('guildMemberAdd', member => {
   channel.sendEmbed(embed); // belirlediğimiz kanala mesaj gönderelim.
 });
 
-client.login('NDY1NDgwNjI4NTYxNzcyNTQ0.DiOILg.mFuPX7A72Ue5Z_H5n_pDCBJrgpg');
+client.login('NDY1ODI5MzAzODY3OTMyNjgy.DiTM4w.IzpJZLitaRdephG0RfvIb8J032w');
